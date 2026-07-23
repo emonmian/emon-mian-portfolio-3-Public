@@ -11,10 +11,12 @@ const links = [
   { label: 'Experience', href: '#experience' },
   { label: 'Publications', href: '#publications' },
   { label: 'Research', href: '#research' },
+  { label: 'Metamaterials', href: '#metamaterial' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Awards', href: '#awards' },
   { label: 'Certifications', href: '#certifications' },
+  { label: 'Certificates', href: '#all-certificates' },
   { label: 'Contact', href: '#contact' },
 ]
 
