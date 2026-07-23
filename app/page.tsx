@@ -6,12 +6,10 @@ import { ResearchSummary } from '@/components/research-summary'
 import { Experience } from '@/components/experience'
 import { Publications } from '@/components/publications'
 import { Research } from '@/components/research'
-import { MetamaterialResearch } from '@/components/metamaterial-research'
 import { Projects } from '@/components/projects'
 import { Skills } from '@/components/skills'
 import { Awards } from '@/components/awards'
 import { Certifications } from '@/components/certifications'
-import { AllCertificates } from '@/components/all-certificates'
 import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
 
@@ -27,12 +25,10 @@ export default function Page() {
         <Experience />
         <Publications />
         <Research />
-        <MetamaterialResearch />
         <Projects />
         <Skills />
         <Awards />
         <Certifications />
-        <AllCertificates />
         <Contact />
       </main>
       <Footer />
