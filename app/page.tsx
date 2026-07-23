@@ -6,7 +6,6 @@ import { ResearchSummary } from '@/components/research-summary'
 import { Experience } from '@/components/experience'
 import { Publications } from '@/components/publications'
 import { Research } from '@/components/research'
-import { MetamaterialResearch } from '@/components/metamaterial-research'
 import { Projects } from '@/components/projects'
 import { Skills } from '@/components/skills'
 import { Awards } from '@/components/awards'
@@ -27,7 +26,6 @@ export default function Page() {
         <Experience />
         <Publications />
         <Research />
-        <MetamaterialResearch />
         <Projects />
         <Skills />
         <Awards />
