@@ -10,6 +10,7 @@ import { Projects } from '@/components/projects'
 import { Skills } from '@/components/skills'
 import { Awards } from '@/components/awards'
 import { Certifications } from '@/components/certifications'
+import { AllCertificates } from '@/components/all-certificates'
 import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
 
@@ -29,6 +30,7 @@ export default function Page() {
         <Skills />
         <Awards />
         <Certifications />
+        <AllCertificates />
         <Contact />
       </main>
       <Footer />

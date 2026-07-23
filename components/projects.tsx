@@ -162,6 +162,46 @@ const projects: Project[] = [
     ],
   },
   {
+    image: '/metamaterial/unit-cell.png',
+    title: 'Metamaterial Absorber Research',
+    desc: 'Research on GHz and THz metamaterial absorbers for electromagnetic sensing and absorption applications, designed and simulated in CST Studio Suite.',
+    metrics: ['GHz + THz', 'Near-Unity Absorption'],
+    tags: [
+      'Metamaterials',
+      'CST Studio Suite',
+      'THz Sensing',
+      'Electromagnetic Absorbers',
+    ],
+    galleryLabel: 'View research figures',
+    gallery: [
+      {
+        src: '/metamaterial/unit-cell.png',
+        caption:
+          'CST Studio Suite unit-cell model of the metamaterial absorber with a resonator pattern on a dielectric substrate over a metallic ground plane.',
+      },
+      {
+        src: '/metamaterial/absorption-spectrum.png',
+        caption:
+          'Simulated absorptivity spectrum showing near-unity absorption peaks at the resonant frequencies.',
+      },
+      {
+        src: '/metamaterial/field-distribution.png',
+        caption:
+          'Surface current and E-field distribution across the resonator at resonance, revealing the absorption mechanism.',
+      },
+      {
+        src: '/metamaterial/prototype.png',
+        caption:
+          'Fabricated metamaterial absorber prototype with periodic resonator cells etched on a dielectric substrate.',
+      },
+      {
+        src: '/metamaterial/array-fabricated.png',
+        caption:
+          'Fabricated periodic absorber array showing the repeating unit cells on a thin substrate.',
+      },
+    ],
+  },
+  {
     image: '/projects/thz-biosensor/sensing-workflow.png',
     title: 'THz Metamaterial Biosensor',
     desc: 'Machine-learning-assisted terahertz metamaterial biosensor that discriminates cancerous from normal breast tissue via its terahertz spectral response.',
