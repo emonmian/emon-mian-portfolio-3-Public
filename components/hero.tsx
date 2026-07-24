@@ -6,17 +6,17 @@ import { Download, Mail, ArrowRight } from 'lucide-react'
 import { LinkedInIcon, ScholarIcon } from '@/components/brand-icons'
 
 const roles = [
-  'Electrical Engineer',
+  'RF & Microwave Engineering Enthusiast',
+  'Antenna & Electromagnetic Researcher',
   'RF & Embedded Systems Engineer',
-  'Hardware Designer',
-  'Research Analyst',
+  'Electrical Engineer',
 ]
 
 const stats = [
   { value: '4+', label: 'Conference Publications' },
-  { value: '2+', label: 'Journal Manuscripts' },
+  { value: '1+', label: 'Journal Manuscripts' },
   { value: '7+', label: 'Engineering Projects' },
-  { value: '1+', label: 'Years Research & Engineering Experience' },
+  { value: '2+', label: 'Years Research & Engineering Experience' },
 ]
 
 export function Hero() {
