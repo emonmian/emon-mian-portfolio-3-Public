@@ -39,7 +39,10 @@ const leadership: LeadershipCard[] = [
     title: 'NASA Space Apps Challenge 2024',
     detail: '2nd Runner-Up',
     highlight: true,
-    images: [],
+    images: [
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.57.56%20PM-r3ZPFSoJECJeY6ef0HjYSFJc22Anir.jpeg',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.57.57%20PM-SQ7oQvCLf6sb0uUfkskXjA2Vrcb1ZV.jpeg',
+    ],
     location: 'Bangladesh',
     desc: 'Competed in NASA Space Apps Challenge 2024 as team 2nd runner-up, developing innovative solutions for space challenges.',
   },
