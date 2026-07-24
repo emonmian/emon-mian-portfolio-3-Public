@@ -79,7 +79,7 @@ const activities: Activity[] = [
     desc: 'Passionate about tree care and plant propagation through air layering, cutting, and grafting techniques, promoting environmental sustainability.',
   },
   {
-    images: ['/activities/devsphere-hackathon.png'],
+    images: ['/activities/devsphere-hackathon-1.jpg'],
     title: 'Devsphere Hackathon 2025',
     date: '2025',
     location: 'Mymensingh Engineering College',
