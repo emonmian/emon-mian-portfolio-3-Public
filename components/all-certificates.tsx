@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
 
 const PDF_PATH = '/certificates/all-certificates.pdf'
-const TOTAL_CERTIFICATES = 12
+const TOTAL_CERTIFICATES = 17
 
 export function AllCertificates() {
   return (
@@ -17,7 +17,7 @@ export function AllCertificates() {
 
         <Reveal>
           <article className="glass gradient-border overflow-hidden rounded-3xl">
-            <div className="grid gap-0 sm:grid-cols-[minmax(0,1fr)_auto]">
+            <div className="grid gap-0">
               {/* Left: document info */}
               <div className="flex flex-col gap-6 p-6 sm:p-8">
                 <div className="flex items-center gap-4">
@@ -38,7 +38,7 @@ export function AllCertificates() {
                   <div className="flex items-center gap-2 rounded-xl border border-border bg-card/50 px-3 py-2">
                     <Award className="h-4 w-4 text-primary" />
                     <div className="leading-tight">
-                      <p className="font-mono text-sm font-semibold text-foreground">
+                      <p className="font-mono text-sm font-semibold rounded-lg bg-gradient-to-br from-purple-600 to-purple-800 text-white px-2 py-1">
                         {TOTAL_CERTIFICATES}
                       </p>
                       <p className="text-xs text-muted-foreground">
@@ -87,18 +87,7 @@ export function AllCertificates() {
                 </div>
               </div>
 
-              {/* Right: PDF preview icon panel */}
-              <div className="flex items-center justify-center border-t border-border bg-card/30 p-8 sm:border-l sm:border-t-0">
-                <div className="relative flex aspect-[3/4] w-40 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-background/60 shadow-lg shadow-black/20">
-                  <span className="absolute right-2 top-2 rounded-md bg-primary/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-primary">
-                    PDF
-                  </span>
-                  <FileText className="h-14 w-14 text-primary" />
-                  <p className="px-3 text-center text-xs text-muted-foreground">
-                    Certificates.pdf
-                  </p>
-                </div>
-              </div>
+
             </div>
           </article>
         </Reveal>
