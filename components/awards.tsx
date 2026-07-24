@@ -52,7 +52,11 @@ const activities: Activity[] = [
     desc: "Participant in the Anti-Discrimination Student Movement and July 2024 People's Uprising, contributing to awareness initiatives against inequality and social justice.",
   },
   {
-    images: ['/activities/flood-relief.png'],
+    images: [
+      '/activities/flood-relief-1.jpg',
+      '/activities/flood-relief-2.jpg',
+      '/activities/flood-relief-3.jpg',
+    ],
     title: 'Flood Relief Operations, Feni',
     date: '25 Aug 2024 – 30 Aug 2024',
     location: 'Feni District, Bangladesh',
