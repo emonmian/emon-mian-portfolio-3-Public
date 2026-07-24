@@ -28,6 +28,7 @@ type LeadershipCard = {
   detail: string
   highlight?: boolean
   images?: string[]
+  coverImage?: string
   location?: string
   date?: string
   desc?: string
@@ -97,6 +98,7 @@ const leadership: LeadershipCard[] = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.06.45%20PM-rTZdJy8jj3HSkOQIyynU7RbzxHItzP.jpeg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-11-29%20at%2012.35.52%20PM-zp39MVnGJFNELIhqjcru4fLyKu5UCA.jpeg',
     ],
+    coverImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-11-29%20at%202.08.16%20PM%20%281%29-4WbSoal9SKyHNxFtHWQ6ve787AR1uM.jpeg',
     location: 'Mymensingh, Bangladesh',
     date: 'Feb 2023 – Feb 2024',
     desc: 'Contributed to telemetry antenna design and development using CST Studio Suite. First Rocket Company of Bangladesh.',
@@ -487,7 +489,7 @@ export function Awards() {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden rounded-lg mb-3">
                     <Image
-                      src={item.images[0] || '/placeholder.svg'}
+                      src={item.coverImage || item.images[0] || '/placeholder.svg'}
                       alt={item.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 33vw"
