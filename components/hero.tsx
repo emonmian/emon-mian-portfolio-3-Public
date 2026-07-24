@@ -6,10 +6,10 @@ import { Download, Mail, ArrowRight } from 'lucide-react'
 import { LinkedInIcon, ScholarIcon } from '@/components/brand-icons'
 
 const roles = [
-  'Electrical Engineer',
+  'RF & Microwave Engineering Enthusiast',
+  'Antenna & Electromagnetic Researcher',
   'RF & Embedded Systems Engineer',
-  'Hardware Designer',
-  'Research Analyst',
+  'Electrical Engineer',
 ]
 
 const stats = [
