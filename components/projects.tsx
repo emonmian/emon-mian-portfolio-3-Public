@@ -251,7 +251,7 @@ const projects: Project[] = [
     title: 'THz Metamaterial Biosensor',
     desc: 'Machine-learning-assisted terahertz metamaterial biosensor that discriminates cancerous from normal breast tissue via its terahertz spectral response.',
     metrics: ['ML Assisted', 'Cancer Detection'],
-    tags: ['THz', 'Metamaterial', 'Machine Learning'],
+    tags: ['THz', 'Metamaterial', 'CST Studio Suite'],
     galleryLabel: 'View sensing concept',
     gallery: [
       {
