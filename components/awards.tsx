@@ -48,7 +48,7 @@ const leadership: LeadershipCard[] = [
     ],
     coverImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.57.56%20PM-r3ZPFSoJECJeY6ef0HjYSFJc22Anir.jpeg',
     location: 'Bangladesh',
-    desc: 'Competed in NASA Space Apps Challenge 2024 as team 2nd runner-up, developing innovative solutions for space challenges.',
+    desc: 'As a member of Team Global Protector, developed an educational solution to promote awareness of the United Nations Sustainable Development Goals (SDGs) among school students, securing 2nd Runner-Up in the Khulna Region at NASA Space Apps Challenge 2024.',
   },
   {
     icon: Medal,
