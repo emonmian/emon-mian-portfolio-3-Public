@@ -16,7 +16,7 @@ const stats = [
   { value: '4+', label: 'Conference Publications' },
   { value: '2+', label: 'Journal Manuscripts' },
   { value: '7+', label: 'Engineering Projects' },
-  { value: '1+', label: 'Years Research & Engineering Experience' },
+  { value: '2+', label: 'Years Research & Engineering Experience' },
 ]
 
 export function Hero() {
