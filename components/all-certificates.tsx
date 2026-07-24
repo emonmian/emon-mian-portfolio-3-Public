@@ -3,7 +3,7 @@ import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
 
 const PDF_PATH = '/certificates/all-certificates.pdf'
-const TOTAL_CERTIFICATES = 15
+const TOTAL_CERTIFICATES = 17
 
 export function AllCertificates() {
   return (
