@@ -162,7 +162,7 @@ const projects: Project[] = [
     ],
   },
   {
-    image: '/metamaterial/unit-cell.png',
+    image: '/metamaterial/schematic-copper-patch-substrate.jpeg',
     title: 'Metamaterial Absorber Research',
     desc: 'Research on GHz and THz metamaterial absorbers for electromagnetic sensing and absorption applications, designed and simulated in CST Studio Suite.',
     metrics: ['GHz + THz', 'Near-Unity Absorption'],
@@ -175,29 +175,74 @@ const projects: Project[] = [
     galleryLabel: 'View research figures',
     gallery: [
       {
-        src: '/metamaterial/unit-cell.png',
+        src: '/metamaterial/schematic-copper-patch-substrate.jpeg',
         caption:
-          'CST Studio Suite unit-cell model of the metamaterial absorber with a resonator pattern on a dielectric substrate over a metallic ground plane.',
+          'Labeled unit-cell schematic of the metamaterial absorber: a patterned copper patch resonator on an FR4 substrate backed by a full copper backplane, with the L × W footprint marked.',
       },
       {
-        src: '/metamaterial/absorption-spectrum.png',
+        src: '/metamaterial/schematic-unit-cell-dimensions.jpeg',
         caption:
-          'Simulated absorptivity spectrum showing near-unity absorption peaks at the resonant frequencies.',
+          'Parametric layout of the multi-resonant resonator showing the concentric octagonal and square rings with the full set of optimized dimension variables (a, b, c, d, e, f, g, i, j, k, l, w, s, h).',
       },
       {
-        src: '/metamaterial/field-distribution.png',
+        src: '/metamaterial/cst-emon-unique-spiral.png',
         caption:
-          'Surface current and E-field distribution across the resonator at resonance, revealing the absorption mechanism.',
+          'CST Studio Suite unit cell of a concentric square-spiral resonator between the periodic boundary planes used for the absorptivity simulation.',
       },
       {
-        src: '/metamaterial/prototype.png',
+        src: '/metamaterial/cst-high-q-absorber.png',
         caption:
-          'Fabricated metamaterial absorber prototype with periodic resonator cells etched on a dielectric substrate.',
+          'High-Q absorber model: 3D view of the concentric square-spiral resonator on the dielectric substrate over a metallic ground plane.',
       },
       {
-        src: '/metamaterial/array-fabricated.png',
+        src: '/metamaterial/cst-microwave-sensor-star.png',
         caption:
-          'Fabricated periodic absorber array showing the repeating unit cells on a thin substrate.',
+          'Microwave sensor resonator with a concentric-square frame and radiating star elements, sized to a 19 mm unit cell.',
+      },
+      {
+        src: '/metamaterial/cst-circle-diamond-loops.png',
+        caption:
+          'Four-diamond-loop resonator design ("circle shape") on a dielectric patch with two excitation ports for the microwave-band study.',
+      },
+      {
+        src: '/metamaterial/cst-dumbbell-resonator.png',
+        caption:
+          'Dumbbell / H-shaped resonator unit cell ("unique sensor") modeled between the boundary planes for a sensing absorber.',
+      },
+      {
+        src: '/metamaterial/cst-crescent-resonator.png',
+        caption:
+          'Crescent-and-star resonator unit cell on a dielectric substrate, evaluated for multi-band electromagnetic absorption.',
+      },
+      {
+        src: '/metamaterial/cst-polarization-metasurface.png',
+        caption:
+          'Polarization-transferring metasurface for the X, C, and K bands, featuring a rotated split-ring / chevron resonator.',
+      },
+      {
+        src: '/metamaterial/cst-thz-diamond-cross.png',
+        caption:
+          'Terahertz absorber (µm / THz units): interlocking diamond-and-cross gold resonator on a thin dielectric slab.',
+      },
+      {
+        src: '/metamaterial/cst-final-thz-resonator.png',
+        caption:
+          'Final THz metamaterial design: interlocking cross/diamond resonator array patterned on the substrate for near-unity terahertz absorption.',
+      },
+      {
+        src: '/metamaterial/cst-ring-resonator-mzi.png',
+        caption:
+          'THz ring-resonator / Mach–Zehnder waveguide structure explored for resonant terahertz filtering and sensing.',
+      },
+      {
+        src: '/metamaterial/sensor-model-thickness.png',
+        caption:
+          'Biosensor model and thickness view: the resonator and sensing layer sit on a 2 mm FR4 substrate.',
+      },
+      {
+        src: '/metamaterial/thz-cancer-sensing-workflow.png',
+        caption:
+          'THz metamaterial biosensing workflow — a terahertz source illuminates the sensor chip holding the tissue sample, and the spectrometric response is classified as normal vs. cancer cells.',
       },
     ],
   },
