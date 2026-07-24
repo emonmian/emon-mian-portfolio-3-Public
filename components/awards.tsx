@@ -63,7 +63,10 @@ const activities: Activity[] = [
     desc: 'Participated in flood relief operations across affected areas of Feni District, assisting with food distribution, drinking water supply, and emergency relief support.',
   },
   {
-    images: ['/activities/semiconductor-seminar.png'],
+    images: [
+      '/activities/semiconductor-seminar-1.jpg',
+      '/activities/semiconductor-seminar-2.jpg',
+    ],
     title: 'Hybrid Seminar on Semiconductor Devices',
     date: '24 April 2025',
     location: 'Mymensingh Engineering College',
