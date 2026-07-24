@@ -29,7 +29,7 @@ export function Research() {
         <SectionHeading
           eyebrow="Research Interests"
           title="Areas of focus"
-          description="Exploring the frontier where electromagnetics, hardware, and machine learning converge."
+          description="Research interests spanning antennas, radar sensing, metamaterials, and wireless communication systems."
         />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
