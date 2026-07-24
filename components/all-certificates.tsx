@@ -38,7 +38,7 @@ export function AllCertificates() {
                   <div className="flex items-center gap-2 rounded-xl border border-border bg-card/50 px-3 py-2">
                     <Award className="h-4 w-4 text-primary" />
                     <div className="leading-tight">
-                      <p className="font-mono text-sm font-semibold text-foreground">
+                      <p className="font-mono text-sm font-semibold rounded-lg bg-gradient-to-br from-purple-600 to-purple-800 text-white px-2 py-1">
                         {TOTAL_CERTIFICATES}
                       </p>
                       <p className="text-xs text-muted-foreground">
