@@ -27,6 +27,7 @@ type LeadershipCard = {
   title: string
   detail: string
   highlight?: boolean
+  featured?: boolean
   images?: string[]
   coverImage?: string
   location?: string
@@ -40,10 +41,12 @@ const leadership: LeadershipCard[] = [
     title: 'NASA Space Apps Challenge 2024',
     detail: '2nd Runner-Up',
     highlight: true,
+    featured: true,
     images: [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.57.56%20PM-r3ZPFSoJECJeY6ef0HjYSFJc22Anir.jpeg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.57.57%20PM-SQ7oQvCLf6sb0uUfkskXjA2Vrcb1ZV.jpeg',
     ],
+    coverImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-24%20at%2012.57.56%20PM-r3ZPFSoJECJeY6ef0HjYSFJc22Anir.jpeg',
     location: 'Bangladesh',
     desc: 'Competed in NASA Space Apps Challenge 2024 as team 2nd runner-up, developing innovative solutions for space challenges.',
   },
@@ -52,45 +55,17 @@ const leadership: LeadershipCard[] = [
     title: 'Walton National Science Fest 2023',
     detail: '1st Runner-Up',
     highlight: true,
+    featured: true,
     images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-11-29%20at%202.08.17%20PM%20%282%29-d0raNTfOrdorUrmfrCS8rLIsBHOcoR.jpeg'],
     location: 'Bangladesh',
     desc: 'Achieved 1st runner-up position at Walton National Science Fest 2023, showcasing technical excellence.',
-  },
-  {
-    icon: Beaker,
-    title: 'Alpha Science Lab',
-    detail: 'Researcher',
-    images: [],
-  },
-  {
-    icon: Users,
-    title: 'BASIS Student Forum',
-    detail: 'Executive',
-    images: [],
-  },
-  {
-    icon: PenTool,
-    title: 'MEC Research Community',
-    detail: 'Editor',
-    images: [],
-  },
-  {
-    icon: Megaphone,
-    title: 'ICT Olympiad Bangladesh',
-    detail: 'Campus Ambassador',
-    images: [],
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Devsphere Hackathon',
-    detail: 'Volunteer',
-    images: [],
   },
   {
     icon: Rocket,
     title: 'DhumketuX Defense',
     detail: 'RF & Embedded Systems Engineer',
     highlight: true,
+    featured: true,
     images: [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-11-29%20at%202.08.16%20PM-dOXKs2EcJqWK6uMybTqLk5xWd89Opp.jpeg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FB_IMG_1705653749499-IjUDOFQr5AEFklsz8ZO3zr2VU8PASr.jpg',
@@ -102,6 +77,31 @@ const leadership: LeadershipCard[] = [
     location: 'Mymensingh, Bangladesh',
     date: 'Feb 2023 – Feb 2024',
     desc: 'Contributed to telemetry antenna design and development using CST Studio Suite. First Rocket Company of Bangladesh.',
+  },
+  {
+    icon: Beaker,
+    title: 'Alpha Science Lab',
+    detail: 'Researcher',
+  },
+  {
+    icon: Users,
+    title: 'BASIS Student Forum',
+    detail: 'Executive',
+  },
+  {
+    icon: PenTool,
+    title: 'MEC Research Community',
+    detail: 'Editor',
+  },
+  {
+    icon: Megaphone,
+    title: 'ICT Olympiad Bangladesh',
+    detail: 'Campus Ambassador',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Devsphere Hackathon',
+    detail: 'Volunteer',
   },
 ]
 
@@ -453,7 +453,7 @@ export function Awards() {
           description="Competition honors and leadership across research, community, and outreach."
         />
 
-        {/* Subsection 1: Leadership & Professional Involvement */}
+        {/* Leadership & Professional Involvement */}
         <div className="mb-6 flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary">
             <Trophy className="h-4 w-4" />
@@ -466,7 +466,7 @@ export function Awards() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {leadership.map((item, i) => (
             <Reveal key={item.title} delay={(i % 3) * 0.08}>
-              {item.images && item.images.length > 0 ? (
+              {item.featured && item.images && item.images.length > 0 ? (
                 <button
                   type="button"
                   onClick={() => {
