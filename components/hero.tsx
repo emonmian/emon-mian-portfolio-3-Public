@@ -14,7 +14,7 @@ const roles = [
 
 const stats = [
   { value: '4+', label: 'Conference Publications' },
-  { value: '2+', label: 'Journal Manuscripts' },
+  { value: '1+', label: 'Journal Manuscripts' },
   { value: '7+', label: 'Engineering Projects' },
   { value: '2+', label: 'Years Research & Engineering Experience' },
 ]
