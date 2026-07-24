@@ -51,7 +51,7 @@ const leadership: LeadershipCard[] = [
     title: 'Walton National Science Fest 2023',
     detail: '1st Runner-Up',
     highlight: true,
-    images: [],
+    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-11-29%20at%202.08.17%20PM%20%282%29-d0raNTfOrdorUrmfrCS8rLIsBHOcoR.jpeg'],
     location: 'Bangladesh',
     desc: 'Achieved 1st runner-up position at Walton National Science Fest 2023, showcasing technical excellence.',
   },
