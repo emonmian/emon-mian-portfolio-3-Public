@@ -31,7 +31,7 @@ const leadership = [
 ]
 
 type Activity = {
-  image: string
+  images: string[]
   title: string
   date?: string
   location?: string
@@ -41,34 +41,38 @@ type Activity = {
 
 const activities: Activity[] = [
   {
-    image: '/activities/student-movement.png',
+    images: [
+      '/activities/student-movement-1.jpg',
+      '/activities/student-movement-2.jpg',
+      '/activities/student-movement-3.jpg',
+    ],
     title: 'Anti-Discrimination Student Movement 2024',
     date: 'July 2024',
     location: 'Bangladesh',
     desc: "Participant in the Anti-Discrimination Student Movement and July 2024 People's Uprising, contributing to awareness initiatives against inequality and social justice.",
   },
   {
-    image: '/activities/flood-relief.png',
+    images: ['/activities/flood-relief.png'],
     title: 'Flood Relief Operations, Feni',
     date: '25 Aug 2024 – 30 Aug 2024',
     location: 'Feni District, Bangladesh',
     desc: 'Participated in flood relief operations across affected areas of Feni District, assisting with food distribution, drinking water supply, and emergency relief support.',
   },
   {
-    image: '/activities/semiconductor-seminar.png',
+    images: ['/activities/semiconductor-seminar.png'],
     title: 'Hybrid Seminar on Semiconductor Devices',
     date: '24 April 2025',
     location: 'Mymensingh Engineering College',
     desc: 'Attended a hybrid seminar hosted by MEC Research Community featuring Dr. Nadim Chowdhury (BUET, MIT PhD), focusing on semiconductor devices and emerging technologies.',
   },
   {
-    image: '/activities/plant-propagation.png',
+    images: ['/activities/plant-propagation.png'],
     title: 'Tree Care & Plant Propagation',
     category: 'Hobby & Personal Interest',
     desc: 'Passionate about tree care and plant propagation through air layering, cutting, and grafting techniques, promoting environmental sustainability.',
   },
   {
-    image: '/activities/devsphere-hackathon.png',
+    images: ['/activities/devsphere-hackathon.png'],
     title: 'Devsphere Hackathon 2025',
     date: '2025',
     location: 'Mymensingh Engineering College',
@@ -76,24 +80,26 @@ const activities: Activity[] = [
   },
 ]
 
+type Photo = Omit<Activity, 'images'> & { image: string; count: number; position: number }
+
 function ActivityLightbox({
-  activities,
+  photos,
   index,
   onClose,
   onNavigate,
 }: {
-  activities: Activity[]
+  photos: Photo[]
   index: number
   onClose: () => void
   onNavigate: (i: number) => void
 }) {
   const next = useCallback(
-    () => onNavigate((index + 1) % activities.length),
-    [index, activities.length, onNavigate],
+    () => onNavigate((index + 1) % photos.length),
+    [index, photos.length, onNavigate],
   )
   const prev = useCallback(
-    () => onNavigate((index - 1 + activities.length) % activities.length),
-    [index, activities.length, onNavigate],
+    () => onNavigate((index - 1 + photos.length) % photos.length),
+    [index, photos.length, onNavigate],
   )
 
   useEffect(() => {
@@ -110,7 +116,7 @@ function ActivityLightbox({
     }
   }, [next, prev, onClose])
 
-  const current = activities[index]
+  const current = photos[index]
 
   return (
     <div
@@ -164,6 +170,11 @@ function ActivityLightbox({
           <h3 className="font-heading text-base font-semibold text-balance">
             {current.title}
           </h3>
+          {current.count > 1 && (
+            <p className="mt-1 font-mono text-xs text-muted-foreground">
+              Photo {current.position + 1} of {current.count}
+            </p>
+          )}
           <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 font-mono text-xs text-primary">
             {current.date && (
               <span className="inline-flex items-center gap-1.5">
@@ -195,6 +206,19 @@ function ActivityLightbox({
 
 export function Awards() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+
+  const photos: Photo[] = activities.flatMap((activity) => {
+    const { images, ...rest } = activity
+    return images.map((image, position) => ({
+      ...rest,
+      image,
+      count: images.length,
+      position,
+    }))
+  })
+
+  const coverIndex = (activityIndex: number) =>
+    activities.slice(0, activityIndex).reduce((sum, a) => sum + a.images.length, 0)
 
   return (
     <section id="awards" className="relative px-4 py-24 sm:px-6">
@@ -260,18 +284,23 @@ export function Awards() {
             <Reveal key={activity.title} delay={(i % 3) * 0.1}>
               <button
                 type="button"
-                onClick={() => setActiveIndex(i)}
+                onClick={() => setActiveIndex(coverIndex(i))}
                 className="glass gradient-border group flex h-full w-full flex-col overflow-hidden rounded-2xl text-left transition-transform hover:-translate-y-1"
                 aria-label={`View ${activity.title}`}
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
-                    src={activity.image || '/placeholder.svg'}
+                    src={activity.images[0] || '/placeholder.svg'}
                     alt={activity.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  {activity.images.length > 1 && (
+                    <span className="absolute right-3 top-3 z-10 rounded-full border border-border bg-card/80 px-2.5 py-1 font-mono text-[11px] text-foreground backdrop-blur-sm">
+                      {activity.images.length} photos
+                    </span>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
@@ -310,7 +339,7 @@ export function Awards() {
 
       {activeIndex !== null && (
         <ActivityLightbox
-          activities={activities}
+          photos={photos}
           index={activeIndex}
           onClose={() => setActiveIndex(null)}
           onNavigate={setActiveIndex}
