@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { ScrollText, Building2, CalendarDays, X, Eye } from 'lucide-react'
+import {
+  ScrollText,
+  Building2,
+  CalendarDays,
+  X,
+  Eye,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
 
@@ -11,16 +19,45 @@ const credential = {
   focus: 'Electrical Engineering & Instrumentation',
   organization:
     'Training Institute for Chemical Industries (TICI), BCIC, Polash, Narsingdi, Bangladesh',
-  date: 'Completed 2023',
+  date: 'Completed 2025',
   description:
     'Completed industrial training on Electrical Engineering, Industrial Instrumentation, Industrial Processes, Electrical Maintenance, and Industrial Safety Practices.',
-  certificate: '/certificates/tici-training.png',
+  gallery: [
+    {
+      src: '/certificates/tici-training.jpeg',
+      alt: 'TICI training completion certificate',
+      caption: 'Completion certificate',
+    },
+    {
+      src: '/certificates/tici-training-hands-on-1.jpeg',
+      alt: 'Hands-on wiring of an MCB and contactor panel during training',
+      caption: 'Hands-on panel wiring',
+    },
+    {
+      src: '/certificates/tici-training-hands-on-2.jpeg',
+      alt: 'Lab session working on a motor control distribution board',
+      caption: 'Motor control lab session',
+    },
+  ],
 }
 
-function CertificatePreview({ onClose }: { onClose: () => void }) {
+function GalleryLightbox({
+  index,
+  onClose,
+  onNavigate,
+}: {
+  index: number
+  onClose: () => void
+  onNavigate: (next: number) => void
+}) {
+  const total = credential.gallery.length
+  const image = credential.gallery[index]
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowRight') onNavigate((index + 1) % total)
+      if (e.key === 'ArrowLeft') onNavigate((index - 1 + total) % total)
     }
     document.addEventListener('keydown', onKey)
     document.body.style.overflow = 'hidden'
@@ -28,7 +65,7 @@ function CertificatePreview({ onClose }: { onClose: () => void }) {
       document.removeEventListener('keydown', onKey)
       document.body.style.overflow = ''
     }
-  }, [onClose])
+  }, [index, total, onClose, onNavigate])
 
   return (
     <div
@@ -45,24 +82,51 @@ function CertificatePreview({ onClose }: { onClose: () => void }) {
       >
         <X className="h-5 w-5" />
       </button>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation()
+          onNavigate((index - 1 + total) % total)
+        }}
+        aria-label="Previous image"
+        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full border border-border bg-card/80 p-2 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={(e) => {
+          e.stopPropagation()
+          onNavigate((index + 1) % total)
+        }}
+        aria-label="Next image"
+        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full border border-border bg-card/80 p-2 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
       <div
-        className="glass gradient-border relative aspect-[4/3] w-full max-w-3xl overflow-hidden rounded-2xl bg-card"
+        className="flex w-full max-w-3xl flex-col items-center gap-3"
         onClick={(e) => e.stopPropagation()}
       >
-        <Image
-          src={credential.certificate || '/placeholder.svg'}
-          alt={`${credential.title} certificate`}
-          fill
-          sizes="(max-width: 768px) 100vw, 768px"
-          className="object-contain p-2"
-        />
+        <div className="glass gradient-border relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-card">
+          <Image
+            src={image.src || '/placeholder.svg'}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="object-contain p-2"
+          />
+        </div>
+        <p className="text-sm text-muted-foreground">
+          {image.caption} ({index + 1}/{total})
+        </p>
       </div>
     </div>
   )
 }
 
 export function Certifications() {
-  const [preview, setPreview] = useState(false)
+  const [lightbox, setLightbox] = useState<number | null>(null)
 
   return (
     <section id="certifications" className="relative px-4 py-24 sm:px-6">
@@ -103,20 +167,40 @@ export function Certifications() {
                   {credential.description}
                 </p>
 
-                <button
-                  onClick={() => setPreview(true)}
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
-                >
-                  <Eye className="h-4 w-4" />
-                  Certificate preview
-                </button>
+                <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {credential.gallery.map((image, i) => (
+                    <button
+                      key={image.src}
+                      onClick={() => setLightbox(i)}
+                      className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card/50 transition-colors hover:border-primary/50"
+                      aria-label={`View ${image.caption}`}
+                    >
+                      <Image
+                        src={image.src || '/placeholder.svg'}
+                        alt={image.alt}
+                        fill
+                        sizes="(max-width: 640px) 50vw, 200px"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <span className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 transition-opacity group-hover:opacity-100">
+                        <Eye className="h-5 w-5 text-foreground" />
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </article>
         </Reveal>
       </div>
 
-      {preview && <CertificatePreview onClose={() => setPreview(false)} />}
+      {lightbox !== null && (
+        <GalleryLightbox
+          index={lightbox}
+          onClose={() => setLightbox(null)}
+          onNavigate={(next) => setLightbox(next)}
+        />
+      )}
     </section>
   )
 }
