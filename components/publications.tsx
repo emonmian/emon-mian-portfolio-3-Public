@@ -6,10 +6,13 @@ const journals = [
   {
     title: 'Explainable Machine Learning Assisted Terahertz Metamaterial Absorber for Multi-Cancer Cell Bio-sensing',
     researchArea: 'THz Biosensing • Metamaterials • Electromagnetic Sensing',
+    published: false,
   },
   {
     title: 'Numerical Investigation of Optoelectronic Performance Limits in Lead-Free (FA)₀.₅(MA)₀.₅SnI₃ Perovskite Solar Cells Using SCAPS-1D',
     researchArea: 'Perovskite Solar Cells • SCAPS-1D • Photovoltaics',
+    published: true,
+    citation: 'Published in Optical and Quantum Electronics (Springer Nature), Volume 58, Article 516 (2026).',
   },
 ]
 
@@ -60,7 +63,7 @@ export function Publications() {
               </h3>
             </Reveal>
             <p className="mb-4 text-sm text-muted-foreground">
-              Submitted research manuscripts in terahertz metamaterials, biosensing, and photovoltaic devices.
+              Journal articles in terahertz metamaterials, biosensing, and photovoltaic devices.
             </p>
             <div className="space-y-3">
               {journals.map((pub, i) => (
@@ -70,13 +73,24 @@ export function Publications() {
                       <h4 className="flex-1 font-heading text-base font-semibold leading-snug text-foreground">
                         {pub.title}
                       </h4>
-                      <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full bg-accent/15 px-2.5 py-1 font-mono text-xs text-accent-foreground">
-                        Submitted
+                      <span
+                        className={`mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-xs ${
+                          pub.published
+                            ? 'bg-chart-4/15 text-chart-4'
+                            : 'bg-accent/15 text-accent-foreground'
+                        }`}
+                      >
+                        {pub.published ? 'Published' : 'Submitted'}
                       </span>
                     </div>
                     <p className="text-xs text-muted-foreground/75">
                       {pub.researchArea}
                     </p>
+                    {pub.citation && (
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        {pub.citation}
+                      </p>
+                    )}
                   </article>
                 </Reveal>
               ))}
