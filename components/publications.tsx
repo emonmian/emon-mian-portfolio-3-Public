@@ -1,6 +1,7 @@
-import { BookOpen, FileText } from 'lucide-react'
+import { BookOpen, ExternalLink, FileText } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
+import { Button } from '@/components/ui/button'
 
 const journals = [
   {
@@ -12,7 +13,10 @@ const journals = [
     title: 'Numerical Investigation of Optoelectronic Performance Limits in Lead-Free (FA)₀.₅(MA)₀.₅SnI₃ Perovskite Solar Cells Using SCAPS-1D',
     researchArea: 'Perovskite Solar Cells • SCAPS-1D • Photovoltaics',
     published: true,
-    citation: 'Published in Optical and Quantum Electronics (Springer Nature), Volume 58, Article 516 (2026).',
+    journal: 'Optical and Quantum Electronics (Springer Nature)',
+    details: 'Volume 58, Article 516 (2026)',
+    doi: '10.1007/s11082-026-09102-w',
+    publicationUrl: 'https://link.springer.com/article/10.1007/s11082-026-09102-w',
   },
 ]
 
@@ -86,10 +90,31 @@ export function Publications() {
                     <p className="text-xs text-muted-foreground/75">
                       {pub.researchArea}
                     </p>
-                    {pub.citation && (
-                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                        {pub.citation}
-                      </p>
+                    {pub.journal && (
+                      <div className="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground">
+                        <p>
+                          {pub.journal}
+                          <span className="px-1.5 text-muted-foreground/60">•</span>
+                          {pub.details}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-3">
+                          <p className="font-mono text-xs text-muted-foreground/75">
+                            DOI: {pub.doi}
+                          </p>
+                          {pub.publicationUrl && (
+                            <Button asChild size="sm" variant="outline">
+                              <a
+                                href={pub.publicationUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <ExternalLink data-icon="inline-start" />
+                                View Publication
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
                     )}
                   </article>
                 </Reveal>
