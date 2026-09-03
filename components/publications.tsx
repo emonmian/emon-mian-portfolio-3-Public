@@ -1,15 +1,22 @@
-import { BookOpen, FileText } from 'lucide-react'
+import { BookOpen, ExternalLink, FileText } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
+import { Button } from '@/components/ui/button'
 
 const journals = [
   {
     title: 'Explainable Machine Learning Assisted Terahertz Metamaterial Absorber for Multi-Cancer Cell Bio-sensing',
     researchArea: 'THz Biosensing • Metamaterials • Electromagnetic Sensing',
+    published: false,
   },
   {
     title: 'Numerical Investigation of Optoelectronic Performance Limits in Lead-Free (FA)₀.₅(MA)₀.₅SnI₃ Perovskite Solar Cells Using SCAPS-1D',
     researchArea: 'Perovskite Solar Cells • SCAPS-1D • Photovoltaics',
+    published: true,
+    journal: 'Optical and Quantum Electronics (Springer Nature)',
+    details: 'Volume 58, Article 516 (2026)',
+    doi: '10.1007/s11082-026-09102-w',
+    publicationUrl: 'https://link.springer.com/article/10.1007/s11082-026-09102-w',
   },
 ]
 
@@ -60,7 +67,7 @@ export function Publications() {
               </h3>
             </Reveal>
             <p className="mb-4 text-sm text-muted-foreground">
-              Submitted research manuscripts in terahertz metamaterials, biosensing, and photovoltaic devices.
+              Journal articles in terahertz metamaterials, biosensing, and photovoltaic devices.
             </p>
             <div className="space-y-3">
               {journals.map((pub, i) => (
@@ -70,13 +77,45 @@ export function Publications() {
                       <h4 className="flex-1 font-heading text-base font-semibold leading-snug text-foreground">
                         {pub.title}
                       </h4>
-                      <span className="mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full bg-accent/15 px-2.5 py-1 font-mono text-xs text-accent-foreground">
-                        Submitted
+                      <span
+                        className={`mt-0.5 inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-xs ${
+                          pub.published
+                            ? 'bg-chart-4/15 text-chart-4'
+                            : 'bg-accent/15 text-accent-foreground'
+                        }`}
+                      >
+                        {pub.published ? 'Published' : 'Submitted'}
                       </span>
                     </div>
                     <p className="text-xs text-muted-foreground/75">
                       {pub.researchArea}
                     </p>
+                    {pub.journal && (
+                      <div className="mt-3 flex flex-col gap-3 text-sm leading-relaxed text-muted-foreground">
+                        <p>
+                          {pub.journal}
+                          <span className="px-1.5 text-muted-foreground/60">•</span>
+                          {pub.details}
+                        </p>
+                        <div className="flex flex-wrap items-center gap-3">
+                          <p className="font-mono text-xs text-muted-foreground/75">
+                            DOI: {pub.doi}
+                          </p>
+                          {pub.publicationUrl && (
+                            <Button asChild size="sm" variant="outline">
+                              <a
+                                href={pub.publicationUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <ExternalLink data-icon="inline-start" />
+                                View Publication
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    )}
                   </article>
                 </Reveal>
               ))}
