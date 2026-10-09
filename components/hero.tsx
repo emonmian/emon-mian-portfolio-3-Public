@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Download, Mail, ArrowRight } from 'lucide-react'
+import { Eye, Mail, ArrowRight } from 'lucide-react'
 import { LinkedInIcon, ScholarIcon } from '@/components/brand-icons'
 
 const roles = [
@@ -95,11 +95,12 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <a
               href="/cv-md-emon-mian.pdf"
-              download="Md-Emon-Mian-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-primary to-accent px-5 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
             >
-              <Download className="h-4 w-4" />
-              Download CV
+              <Eye className="h-4 w-4" />
+              View CV
             </a>
             <a
               href="https://www.linkedin.com/in/emonmian/"
