@@ -7,7 +7,11 @@ const journals = [
   {
     title: 'Explainable Machine Learning Assisted Terahertz Metamaterial Absorber for Multi-Cancer Cell Bio-sensing',
     researchArea: 'THz Biosensing • Metamaterials • Electromagnetic Sensing',
-    published: false,
+    published: true,
+    journal: 'Next Chemical Engineering (Elsevier)',
+    details: 'Volume 3, Article 100124 (December 2026)',
+    doi: '10.1016/j.nxcen.2026.100124',
+    publicationUrl: 'https://www.sciencedirect.com/science/article/pii/S3050724326001051?via%3Dihub',
   },
   {
     title: 'Numerical Investigation of Optoelectronic Performance Limits in Lead-Free (FA)₀.₅(MA)₀.₅SnI₃ Perovskite Solar Cells Using SCAPS-1D',
@@ -106,7 +110,7 @@ export function Publications() {
                               <a
                                 href={pub.publicationUrl}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                               >
                                 <ExternalLink data-icon="inline-start" />
                                 View Publication
