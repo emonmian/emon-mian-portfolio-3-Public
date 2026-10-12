@@ -2,8 +2,8 @@ import { FileText, Eye, Download, FolderArchive, Award } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
 import { Reveal } from '@/components/reveal'
 
-const PDF_PATH = '/certificates/all-certificates.pdf'
-const TOTAL_CERTIFICATES = 17
+const PDF_PATH = '/assets/docs/Md_Emon_Mian_Certificates_and_Credentials.pdf'
+const TOTAL_CERTIFICATES = '11'
 
 export function AllCertificates() {
   return (
@@ -50,20 +50,23 @@ export function AllCertificates() {
                     <FileText className="h-4 w-4 text-primary" />
                     <div className="leading-tight">
                       <p className="font-mono text-sm font-semibold text-foreground">
-                        PDF
+                        PDF • Single Document
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Single document
+                        Approx. 9 pages
                       </p>
                     </div>
                   </div>
                 </div>
 
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  A single, downloadable PDF compiling professional
-                  certificates, workshop attendances, industrial trainings, and
-                  academic achievements — organized for MSc, PhD, research
-                  assistantship, and scholarship applications.
+                  A consolidated, verified portfolio compiling academic credentials,
+                  peer-reviewed conference presentation certificates (IEEE ICCIT
+                  & ECCE), national innovation awards (NASA Space Apps Challenge,
+                  National Science Fest), industrial engineering training (TICI),
+                  and embedded system project recognitions (DhumketuX) —
+                  systematically categorized for Graduate Admissions (MSc/PhD)
+                  and Research Assistantships.
                 </p>
 
                 <div className="flex flex-wrap gap-3">
