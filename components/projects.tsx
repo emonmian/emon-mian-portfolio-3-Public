@@ -62,26 +62,27 @@ const projects: Project[] = [
     ],
   },
   {
-    image: '/projects/yagi/model-3d.jpg',
+    image: '/projects/yagi/farfield-3d.png',
     title: '433 MHz High-Gain Yagi-Uda Antenna',
     desc: 'Directional 433 MHz Yagi-Uda designed in CST Studio and validated on a NanoVNA-F V2, delivering high forward gain for long-range telemetry.',
     metrics: ['Measured: 8.68 dB', 'Zin ≈ 73 Ω'],
     tags: ['CST Studio', 'NanoVNA', 'RF Design'],
     gallery: [
       {
-        src: '/projects/yagi/model-3d.jpg',
-        caption:
-          'CST Studio 3D model showing the reflector, driven dipole, and director elements with the parametric length list.',
+        src: '/projects/yagi/farfield-3d.png',
+        caption: 'CST Studio 3D far-field radiation pattern for the 433 MHz Yagi-Uda antenna.',
       },
       {
-        src: '/projects/yagi/farfield-cuts.jpg',
-        caption:
-          'Far-field cut setup in CST Studio with the Yagi elements inside the theta/phi radiation sphere.',
+        src: '/projects/yagi/farfield-2d.png',
+        caption: 'CST Studio 2D far-field cut showing the antenna directivity across phi and theta.',
       },
       {
-        src: '/projects/yagi/vna-s21.jpg',
-        caption:
-          'NanoVNA-F V2 measured S21 (gain) trace reading 8.68 dB at the 435.5 MHz marker.',
+        src: '/projects/yagi/model-geometry.png',
+        caption: 'CST Studio geometry view of the fabricated Yagi-Uda antenna model and driven element.',
+      },
+      {
+        src: '/projects/yagi/s11-measurement.jpeg',
+        caption: 'Measured S-parameter response showing the 433.62 MHz resonance marker.',
       },
       {
         type: 'video',
