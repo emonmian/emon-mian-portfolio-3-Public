@@ -277,6 +277,35 @@ const projects: Project[] = [
       },
     ],
   },
+  {
+    image: '/projects/rogers-patch/geometry.png',
+    title: 'Dual-Band Rogers RT5880 Patch Antenna',
+    desc: 'Compact U-slot inset-fed microstrip patch antenna designed on a 3.175 mm low-loss Rogers RT5880 substrate in CST Studio, operating across GPS L1 (1.58 GHz) and WLAN (2.44 GHz) bands with fabrication-ready Gerber outputs.',
+    metrics: ['Gain: 7.17 dBi', 'Directivity: 7.72 dBi', 'VSWR: 1.05', 'Return Loss: −32.39 dB'],
+    tags: ['CST Studio', 'Rogers RT5880', 'Dual-Band Patch'],
+    gallery: [
+      {
+        src: '/projects/rogers-patch/geometry.png',
+        caption: 'CST Studio 3D geometry of the inset-fed U-slot patch antenna on Rogers RT5880.',
+      },
+      {
+        src: '/projects/rogers-patch/s11.png',
+        caption: 'S11 return loss with dual resonances at 1.576 GHz (−32.387 dB) and 2.448 GHz (−34.259 dB).',
+      },
+      {
+        src: '/projects/rogers-patch/vswr.png',
+        caption: 'VSWR response with markers of 1.0532 at 1.576 GHz and 1.0454 at 2.448 GHz.',
+      },
+      {
+        src: '/projects/rogers-patch/gain-3d.png',
+        caption: '3D realized gain pattern at 1.576 GHz, with a peak gain of 7.17 dBi.',
+      },
+      {
+        src: '/projects/rogers-patch/directivity-3d.png',
+        caption: '3D directivity pattern at 1.576 GHz, with a peak directivity of 7.72 dBi.',
+      },
+    ],
+  },
 ]
 
 function Lightbox({
