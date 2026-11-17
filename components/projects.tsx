@@ -28,14 +28,14 @@ const projects: Project[] = [
     image:
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DESIGN%20%282%29-bwRirtAAdKXrQHqrZBA2IWZ6V4rPoc.png',
     title: 'Suspended Dual-Band FR4 Patch Antenna with Air Gap & DGS',
-    desc: 'Low-cost dual-band suspended microstrip patch antenna on a 1.6 mm FR4 substrate with a 5 mm air-gap cavity and DGS ground plane, validated for two-board PCB fabrication using nylon standoffs.',
+    desc: 'Single-element gain-enhanced dual-band suspended microstrip patch antenna on a 1.6 mm FR4 substrate, combining chamfered patch edges, a 5 mm air-gap cavity, and a Defected Ground Structure (DGS) to suppress surface waves, optimize impedance matching, and boost radiation efficiency.',
     metrics: [
       'Gain: 7.59 dBi',
       'Directivity: 8.61 dBi',
       'VSWR: 1.26',
       'Return Loss: -18.80 dB',
     ],
-    tags: ['CST Studio', 'Suspended Patch', 'DGS'],
+    tags: ['CST Studio', 'Single-Element Gain', 'Air Gap,Chamfer & DGS'],
     gallery: [
       {
         src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DESIGN%20%282%29-bwRirtAAdKXrQHqrZBA2IWZ6V4rPoc.png',
@@ -326,9 +326,9 @@ const projects: Project[] = [
   {
     image: '/projects/rogers-patch/geometry.png',
     title: 'Dual-Band Rogers RT5880 Patch Antenna',
-    desc: 'Compact U-slot inset-fed microstrip patch antenna designed on a 3.175 mm low-loss Rogers RT5880 substrate in CST Studio, operating across GPS L1 (1.58 GHz) and WLAN (2.44 GHz) bands with fabrication-ready Gerber outputs.',
+    desc: 'Single-element gain-enhanced dual-band microstrip patch antenna engineered on a 3.175 mm low-loss Rogers RT5880 substrate, integrating chamfered edges, U-slot loading, and a Defected Ground Structure (DGS) to achieve high single-element gain across GPS L1 (1.58 GHz) and WLAN (2.44 GHz) bands.',
     metrics: ['Gain: 7.17 dBi', 'Directivity: 7.72 dBi', 'VSWR: 1.05', 'Return Loss: −32.39 dB'],
-    tags: ['CST Studio', 'Rogers RT5880', 'Dual-Band Patch'],
+    tags: ['CST Studio', 'Single-Element Gain Enhanced', 'Chamfer & DGS'],
     gallery: [
       {
         src: '/projects/rogers-patch/geometry.png',
