@@ -25,6 +25,52 @@ type Project = {
 
 const projects: Project[] = [
   {
+    image:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DESIGN%20%282%29-bwRirtAAdKXrQHqrZBA2IWZ6V4rPoc.png',
+    title: 'Suspended Dual-Band FR4 Patch Antenna with Air Gap & DGS',
+    desc: 'Single-element gain-enhanced dual-band suspended microstrip patch antenna on a 1.6 mm FR4 substrate, combining chamfered patch edges, a 5 mm air-gap cavity, and a Defected Ground Structure (DGS) to suppress surface waves, optimize impedance matching, and boost radiation efficiency.',
+    metrics: [
+      'Gain: 7.59 dBi',
+      'Directivity: 8.61 dBi',
+      'VSWR: 1.26',
+      'Return Loss: -18.80 dB',
+    ],
+    tags: ['CST Studio', 'Single-Element Gain', 'Air Gap,Chamfer & DGS'],
+    gallery: [
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DESIGN%20%282%29-bwRirtAAdKXrQHqrZBA2IWZ6V4rPoc.png',
+        caption:
+          'CST Studio 3D air-gap stackup showing the suspended patch, FR4 substrate, and ground structure.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Air%20Gap%20FR4%20S11-Zw4aUZqJP5C61Ul9zhucqq9pdlUiC3.png',
+        caption:
+          'S11 return-loss response with dual resonances near 1.58 GHz and 2.44 GHz; the 2.44 GHz marker is -18.80 dB.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Air%20Gap%20FR4%20VSWR-0xqhTfMcnU1ml0F7ezzDWsJ1qWsKbW.png',
+        caption:
+          'VSWR response showing a 1.26 marker at 2.44 GHz.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.582%20Ghz%20%20Realized%20gain%207.59%20dbi-0TS9WQg0WJ6N8RrTCAyQ5pMP2mnHZn.png',
+        caption: '3D realized-gain pattern at 1.582 GHz with a peak of 7.59 dBi.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.44%20Ghz%20%20Realized%20gain%206.2%20dbi-o90s1DrgqsJ4eP3mLv6MYXYc6AQ6lr.png',
+        caption: '3D realized-gain pattern at 2.44 GHz with a peak of 6.2 dBi.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.582%20Ghz%20Directivity%208.61dbi-akHXQtGp6Ag4RoDRMaUwWhpKYFDoLk.png',
+        caption: '3D directivity pattern at 1.582 GHz with a peak of 8.61 dBi.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.44%20%20Ghz%20Directivity%208.34%20dbi-0scQuA8x94hgcMGKlVIIYYczGEoDPm.png',
+        caption: '3D directivity pattern at 2.44 GHz with a peak of 8.34 dBi.',
+      },
+    ],
+  },
+  {
     image: '/projects/mmwave/geometry.jpeg',
     title: '77 GHz mmWave 1×4 Patch Antenna Array',
     desc: 'High-frequency automotive radar array engineered in CST Studio and applied to sub-millimeter crack detection on aluminium plates.',
@@ -274,6 +320,35 @@ const projects: Project[] = [
         src: '/projects/rocket-ignition/prototype.jpg',
         caption:
           'Bench prototype of the wireless ignition controller: Arduino and RF transceiver on a perfboard in an enclosure, wired to the ignition leads.',
+      },
+    ],
+  },
+  {
+    image: '/projects/rogers-patch/geometry.png',
+    title: 'Dual-Band Rogers RT5880 Patch Antenna',
+    desc: 'Single-element gain-enhanced dual-band microstrip patch antenna engineered on a 3.175 mm low-loss Rogers RT5880 substrate, integrating chamfered edges, U-slot loading, and a Defected Ground Structure (DGS) to achieve high single-element gain across GPS L1 (1.58 GHz) and WLAN (2.44 GHz) bands.',
+    metrics: ['Gain: 7.17 dBi', 'Directivity: 7.72 dBi', 'VSWR: 1.05', 'Return Loss: −32.39 dB'],
+    tags: ['CST Studio', 'Single-Element Gain Enhanced', 'Chamfer & DGS'],
+    gallery: [
+      {
+        src: '/projects/rogers-patch/geometry.png',
+        caption: 'CST Studio 3D geometry of the inset-fed U-slot patch antenna on Rogers RT5880.',
+      },
+      {
+        src: '/projects/rogers-patch/s11.png',
+        caption: 'S11 return loss with dual resonances at 1.576 GHz (−32.387 dB) and 2.448 GHz (−34.259 dB).',
+      },
+      {
+        src: '/projects/rogers-patch/vswr.png',
+        caption: 'VSWR response with markers of 1.0532 at 1.576 GHz and 1.0454 at 2.448 GHz.',
+      },
+      {
+        src: '/projects/rogers-patch/gain-3d.png',
+        caption: '3D realized gain pattern at 1.576 GHz, with a peak gain of 7.17 dBi.',
+      },
+      {
+        src: '/projects/rogers-patch/directivity-3d.png',
+        caption: '3D directivity pattern at 1.576 GHz, with a peak directivity of 7.72 dBi.',
       },
     ],
   },
