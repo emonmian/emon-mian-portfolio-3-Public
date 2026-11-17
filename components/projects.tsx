@@ -25,6 +25,52 @@ type Project = {
 
 const projects: Project[] = [
   {
+    image:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DESIGN%20%282%29-bwRirtAAdKXrQHqrZBA2IWZ6V4rPoc.png',
+    title: 'Suspended Dual-Band FR4 Patch Antenna with Air Gap & DGS',
+    desc: 'Low-cost dual-band suspended microstrip patch antenna on a 1.6 mm FR4 substrate with a 5 mm air-gap cavity and DGS ground plane, validated for two-board PCB fabrication using nylon standoffs.',
+    metrics: [
+      'Gain: 7.59 dBi',
+      'Directivity: 8.61 dBi',
+      'VSWR: 1.26',
+      'Return Loss: -18.80 dB',
+    ],
+    tags: ['CST Studio', 'Suspended Patch', 'DGS'],
+    gallery: [
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DESIGN%20%282%29-bwRirtAAdKXrQHqrZBA2IWZ6V4rPoc.png',
+        caption:
+          'CST Studio 3D air-gap stackup showing the suspended patch, FR4 substrate, and ground structure.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Air%20Gap%20FR4%20S11-Zw4aUZqJP5C61Ul9zhucqq9pdlUiC3.png',
+        caption:
+          'S11 return-loss response with dual resonances near 1.58 GHz and 2.44 GHz; the 2.44 GHz marker is -18.80 dB.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Air%20Gap%20FR4%20VSWR-0xqhTfMcnU1ml0F7ezzDWsJ1qWsKbW.png',
+        caption:
+          'VSWR response showing a 1.26 marker at 2.44 GHz.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.582%20Ghz%20%20Realized%20gain%207.59%20dbi-0TS9WQg0WJ6N8RrTCAyQ5pMP2mnHZn.png',
+        caption: '3D realized-gain pattern at 1.582 GHz with a peak of 7.59 dBi.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.44%20Ghz%20%20Realized%20gain%206.2%20dbi-o90s1DrgqsJ4eP3mLv6MYXYc6AQ6lr.png',
+        caption: '3D realized-gain pattern at 2.44 GHz with a peak of 6.2 dBi.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1.582%20Ghz%20Directivity%208.61dbi-akHXQtGp6Ag4RoDRMaUwWhpKYFDoLk.png',
+        caption: '3D directivity pattern at 1.582 GHz with a peak of 8.61 dBi.',
+      },
+      {
+        src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2.44%20%20Ghz%20Directivity%208.34%20dbi-0scQuA8x94hgcMGKlVIIYYczGEoDPm.png',
+        caption: '3D directivity pattern at 2.44 GHz with a peak of 8.34 dBi.',
+      },
+    ],
+  },
+  {
     image: '/projects/mmwave/geometry.jpeg',
     title: '77 GHz mmWave 1×4 Patch Antenna Array',
     desc: 'High-frequency automotive radar array engineered in CST Studio and applied to sub-millimeter crack detection on aluminium plates.',
